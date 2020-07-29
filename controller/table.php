@@ -1,5 +1,5 @@
 <?php
-include 'conexao.php';
+include '../model/conexao.php';
 
 $sqlTable = "SELECT id, nome, email, cpf,fone FROM cliente";
 $result = mysqli_query($link, $sqlTable);

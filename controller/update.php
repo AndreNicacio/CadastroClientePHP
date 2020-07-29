@@ -2,7 +2,7 @@
 <?php
 echo $_SERVER['REQUEST_METHOD'];
 
-include 'conexao.php';
+include '../model/conexao.php';
 
 $name = '';
 $email = '';
@@ -21,6 +21,7 @@ if (isset ($_POST['id']))
 }
 
 $query ="UPDATE cliente SET nome = '$name',email='$email',cpf='$cpf',fone='$fone' where id ='$id'";
+
 if(!mysqli_query($link, $query)) {
     echo "Error message: %s\n", mysqli_error($link);
 }else{
@@ -32,7 +33,7 @@ mysqli_commit($link);
 
 mysqli_close($link);
 
-include 'table.php';
+include '../controller/table.php';
 
 echo "Finalizado!!";
 ?>

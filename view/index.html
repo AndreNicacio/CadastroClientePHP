@@ -5,7 +5,7 @@
     </head>
     <body>
         <h1>CADASTRO DE CLIENTES</h1>
-        <form method="POST" action="data.php">
+        <form method="POST" action="../model/data.php">
             <label>Nome do Cliente: </label>
             <input type="text" name="name" ><br>
 
@@ -19,10 +19,12 @@
             <input type="text" name="fone"><br> 
 
             <input type="submit" name="submit" value="SALVAR">
-        </form>
+        </form><br>
+        
+        <button><a href="../controller/table.php">TABELA</a></button>
 
         <h2>EDITAR CLIENTES</h2>
-        <form method="POST" action="update.php">
+        <form method="POST" action="../controller/update.php">
             <label>ID do Cliente Alterado: </label>
             <input type="text" name="id" ><br>
 
@@ -42,13 +44,12 @@
         </form>
         
         <h2>EXCLUIR CLIENTES</h2>
-        <form method="POST" action="delete.php">
+        <form method="POST" action="../controller/delete.php">
             <label>ID do Cliente p/ Exclusão: </label>
             <input type="text" name="id" ><br>
 
             <input type="submit" name="update" value="EXCLUIR CLIENTE">
         </form>
-
 
     </body>
 </html>
