@@ -21,6 +21,33 @@
             <input type="submit" name="submit" value="SALVAR">
         </form>
 
+        <h2>EDITAR CLIENTES</h2>
+        <form method="POST" action="update.php">
+            <label>ID do Cliente Alterado: </label>
+            <input type="text" name="id" ><br>
+
+            <label>Nome do Cliente: </label>
+            <input type="text" name="nameUpdate" ><br>
+
+            <label>Email do Cliente: </label>
+            <input type="text" name="email"><br>
+
+            <label>CPF do Cliente: </label>
+            <input type="text" name="cpf"><br> 
+
+            <label>Telefone do Cliente: </label>
+            <input type="text" name="fone"><br>
+
+            <input type="submit" name="update" value="EDITAR CLIENTE">
+        </form>
+        
+        <h2>EXCLUIR CLIENTES</h2>
+        <form method="POST" action="delete.php">
+            <label>ID do Cliente p/ Exclusão: </label>
+            <input type="text" name="id" ><br>
+
+            <input type="submit" name="update" value="EXCLUIR CLIENTE">
+        </form>
 
 
     </body>
