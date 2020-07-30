@@ -1,6 +1,5 @@
 
 <?php
-echo $_SERVER['REQUEST_METHOD'];
 
 include '../model/conexao.php';
 
@@ -9,7 +8,10 @@ $email = '';
 $cpf = '';
 $fone = '';
 $query = '';
+$today = date("F j, Y, g:i a");
+
 mysqli_autocommit($link, FALSE);
+
 if (isset ($_POST['id'])) 
 {
     $id = $_POST['id'];
@@ -20,12 +22,18 @@ if (isset ($_POST['id']))
 
 }
 
-$query ="UPDATE cliente SET nome = '$name',email='$email',cpf='$cpf',fone='$fone' where id ='$id'";
+if($name==null || $email==null || $cpf==null){
+    error_log("{$today} - Os campos obrigatorios não foram preenchidos(update.php)\n",3,"../my_errors.log");
+}else{
+    $query ="UPDATE cliente SET nome = '$name',email='$email',cpf='$cpf',fone='$fone' where id ='$id'";
+}
+
+
 
 if(!mysqli_query($link, $query)) {
-    echo "Error message: %s\n", mysqli_error($link);
+    error_log("{$today} - Não foi possivel alterar os dados no banco(update.php), erro no query\n",3,"../my_errors.log");
 }else{
-    echo "Inserido Dados com sucesso";
+    echo "Dados alterados com sucesso";
 }
 
 

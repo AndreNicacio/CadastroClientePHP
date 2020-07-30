@@ -9,6 +9,7 @@ $email = '';
 $cpf = '';
 $fone = '';
 $query = '';
+$today = date("F j, Y, g:i a");
 
 mysqli_autocommit($link, FALSE);
 if (isset ($_POST['id'])) 
@@ -18,9 +19,9 @@ if (isset ($_POST['id']))
 
 $query ="DELETE FROM cliente WHERE id='$id'";
 if(!mysqli_query($link, $query)) {
-    echo "Error message: %s\n", mysqli_error($link);
+    error_log("{$today} - Não foi possivel deletar os dados no banco(delete.php), erro no query\n",3,"../my_errors.log");
 }else{
-    echo "Inserido Dados com sucesso";
+    echo "Dados deletados com sucesso";
 }
 
 

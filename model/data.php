@@ -1,12 +1,13 @@
 
 <?php
-echo $_SERVER['REQUEST_METHOD'];
+
 include 'conexao.php';
 
 $name = '';
 $email = '';
 $cpf = '';
 $fone = '';
+$today = date("F j, Y, g:i a");
 
 mysqli_autocommit($link, FALSE);
 
@@ -18,11 +19,15 @@ if (isset ($_POST['name']))
     $fone = $_POST['fone'];
 }
 
-$sql = "INSERT INTO cliente(nome, email, cpf, fone) VALUES ";
-$sql .= "('$name', '$email', '$cpf', '$fone')";
+if($name==null || $email==null || $cpf==null){
+    error_log("{$today} - Os campos obrigatorios não foram preenchidos(data.php)\n",3,"../my_errors.log");
+}else{
+    $query = "INSERT INTO cliente(nome,email, cpf, fone) VALUES ";
+    $query .= "('$name', '$email', '$cpf', '$fone')";
+}
 
-if(!mysqli_query($link, $sql)) {
-    echo "Error message: %s\n", mysqli_error($link);
+if(!mysqli_query($link, $query)) {
+    error_log("{$today} - Não foi possivel inserir os dados no banco(data.php), erro no query\n",3,"../my_errors.log");
 }else{
     echo "Inserido Dados com sucesso";
 }

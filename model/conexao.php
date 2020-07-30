@@ -9,7 +9,7 @@ $hostname = 'localhost';
 $link =  mysqli_connect($hostname, $user, $password, $database);
 
 if (!$link) {
-    echo "ERROR: NÃO FOI POSSIVEL CONECTAR AO MYSQL";
+    error_log("{$today} - Não foi possivel criar a conexão com o banco de dados(conexao.php), erro no connect\n",3,"../my_errors.log");
 }else{
     echo "Conectado com Sucesso";
 }
