@@ -34,3 +34,5 @@ July 31, 2020, 7:18 pm - Os campos obrigatorios não foram preenchidos(delete.ph
 July 31, 2020, 7:18 pm - Não foi possivel deletar os dados no banco(delete.php), erro no query
 July 31, 2020, 7:29 pm - Os campos obrigatorios não foram preenchidos(data.php)
 July 31, 2020, 7:29 pm - Não foi possivel inserir os dados no banco(data.php), erro no query
+July 31, 2020, 7:46 pm - Não foi possivel criar a conexão com o banco de dados(conexao.php), erro no connect
+July 31, 2020, 7:48 pm - Não foi possivel criar a conexão com o banco de dados(conexao.php), erro no connect

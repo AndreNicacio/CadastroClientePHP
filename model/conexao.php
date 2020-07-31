@@ -4,6 +4,7 @@ $user = 'root';
 $password = 'Neuromancer@1312';
 $database = 'clientes_db';
 $hostname = 'localhost';
+$today = date("F j, Y, g:i a");
 
 
 
