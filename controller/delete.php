@@ -1,7 +1,5 @@
-
 <?php
-echo $_SERVER['REQUEST_METHOD'];
-
+#Importando conexão
 include '../model/conexao.php';
 
 $name = '';
@@ -17,7 +15,13 @@ if (isset ($_POST['id']))
     $id = $_POST['id'];
 }
 
-$query ="DELETE FROM cliente WHERE id='$id'";
+if($id==null){
+    error_log("{$today} - Os campos obrigatorios não foram preenchidos(delete.php)\n",3,"../my_errors.log");
+}else{
+    $query ="DELETE FROM cliente WHERE id='$id'";
+}
+
+#Escrevendo a query e deletando dados do banco
 if(!mysqli_query($link, $query)) {
     error_log("{$today} - Não foi possivel deletar os dados no banco(delete.php), erro no query\n",3,"../my_errors.log");
 }else{
@@ -29,7 +33,8 @@ mysqli_commit($link);
 
 mysqli_close($link);
 
-include '../controller/table.php';
+#Importando a tabela
+include '../model/table.php';
 
 echo "Finalizado!!";
 ?>

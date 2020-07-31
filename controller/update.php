@@ -1,6 +1,6 @@
 
 <?php
-
+#Importando conexão
 include '../model/conexao.php';
 
 $name = '';
@@ -22,14 +22,14 @@ if (isset ($_POST['id']))
 
 }
 
-if($name==null || $email==null || $cpf==null){
+#Checando campos obrigatorios e escrevendo query
+if($id==null || $name==null || $email==null || $cpf==null){
     error_log("{$today} - Os campos obrigatorios não foram preenchidos(update.php)\n",3,"../my_errors.log");
 }else{
     $query ="UPDATE cliente SET nome = '$name',email='$email',cpf='$cpf',fone='$fone' where id ='$id'";
 }
 
-
-
+#Inserindo dados no banco
 if(!mysqli_query($link, $query)) {
     error_log("{$today} - Não foi possivel alterar os dados no banco(update.php), erro no query\n",3,"../my_errors.log");
 }else{
@@ -41,7 +41,8 @@ mysqli_commit($link);
 
 mysqli_close($link);
 
-include '../controller/table.php';
+#Importando tabela
+include '../model/table.php';
 
 echo "Finalizado!!";
 ?>
