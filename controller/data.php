@@ -25,7 +25,7 @@ if (isset ($_POST['name']))
 #Checando campos obrigatorios e escrevendo query
 if($name==null || $email==null || $cpf==null){
     error_log("{$today} - Os campos obrigatorios não foram preenchidos(data.php)\n",3,"../my_errors.log");
-    echo "Os campos obrigatórios não foram preenchidos";
+    echo "Os campos obrigatórios não foram preenchidos ";
 }else{
     $query = "INSERT INTO cliente(nome,email, cpf, fone) VALUES ";
     $query .= "('$name', '$email', '$cpf', '$fone')";

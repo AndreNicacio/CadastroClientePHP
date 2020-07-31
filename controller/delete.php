@@ -17,7 +17,7 @@ if (isset ($_POST['id']))
 
 if($id==null){
     error_log("{$today} - Os campos obrigatorios não foram preenchidos(delete.php)\n",3,"../my_errors.log");
-    echo "Os campos obrigatorios não foram preenchidos";
+    echo "Os campos obrigatorios não foram preenchidos ";
 }else{
     $query ="DELETE FROM cliente WHERE id='$id'";
 }

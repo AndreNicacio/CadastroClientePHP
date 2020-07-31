@@ -32,7 +32,7 @@ Após iniciar o servidor, no navegador(de sua escolha) iremos colocar a URL "loc
 
 ----Versão----
 
-Versão Final: 1.6.1
+Versão Final: 1.6.2
 
 
 ----Autoria----

@@ -25,7 +25,7 @@ if (isset ($_POST['id']))
 #Checando campos obrigatorios e escrevendo query
 if($id==null || $name==null || $email==null || $cpf==null){
     error_log("{$today} - Os campos obrigatorios não foram preenchidos(update.php)\n",3,"../my_errors.log");
-    echo "Os campos obrigatorios não foram preenchidos";
+    echo "Os campos obrigatorios não foram preenchidos ";
 }else{
     $query ="UPDATE cliente SET nome = '$name',email='$email',cpf='$cpf',fone='$fone' where id ='$id'";
 }
