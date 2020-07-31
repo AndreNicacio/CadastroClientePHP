@@ -30,6 +30,10 @@ No terminal do próprio Visual Studio Code e na pasta do projeto, primeiro é ne
 
 Após iniciar o servidor, no navegador(de sua escolha) iremos colocar a URL "localhost:8081/view/index.html".
 
+----Versão----
+
+Versão Final: 1.6.1
+
 
 ----Autoria----
 André Ferreira Nicácio
